@@ -1,0 +1,10 @@
+# Versoes validadas neste projeto.
+#
+# pandas esta fixado em 2.2.x de proposito: no Windows 11 com Smart App Control
+# ativo, os binarios recem-publicados do pandas 3.x sao bloqueados pela politica
+# de Controle de Aplicativo ("DLL load failed while importing conversion"),
+# porque ainda nao possuem reputacao estabelecida. A serie 2.2 carrega sem
+# qualquer ajuste de seguranca no sistema.
+streamlit>=1.36,<2
+pandas>=2.2,<2.3
+plotly>=5.20,<8

@@ -1,0 +1,477 @@
+{
+  "metadados": {
+    "nome": "Base de Conhecimento - Trilhas, Competencias, Roadmaps e Portfolio",
+    "versao": "1.3.0",
+    "escala_nivel": {
+      "0": "Nunca estudei",
+      "1": "Ja ouvi falar / vi superficialmente",
+      "2": "Estudei o basico",
+      "3": "Consigo usar em projetos reais",
+      "4": "Domino e consigo ensinar"
+    },
+    "observacao": "nivel_minimo_junior e o nivel exigido na escala 0-4 para um candidato ser considerado apto a vaga Junior."
+  },
+
+  "catalogo_competencias": {
+    "logica_prog": { "nome": "Logica de programacao e POO", "area": "Fundamentos" },
+    "git": { "nome": "Git e GitHub (branches, PR)", "area": "Fundamentos" },
+    "algoritmos_ed": { "nome": "Algoritmos e estruturas de dados", "area": "Fundamentos" },
+    "linux_cli": { "nome": "Linux e linha de comando", "area": "Fundamentos" },
+    "redes_tcpip": { "nome": "Redes, TCP/IP, DNS e HTTP", "area": "Infraestrutura" },
+    "linguagem_backend": { "nome": "Linguagem de back-end (Java, C#, Python, Node, Go)", "area": "Back-end" },
+    "api_rest": { "nome": "APIs REST e autenticacao (JWT/OAuth)", "area": "Back-end" },
+    "orm_persistencia": { "nome": "ORM e camada de persistencia", "area": "Back-end" },
+    "mensageria_filas": { "nome": "Mensageria e filas (Kafka, RabbitMQ, SQS)", "area": "Back-end" },
+    "sql": { "nome": "SQL e modelagem relacional", "area": "Dados" },
+    "nosql": { "nome": "Bancos NoSQL (MongoDB, Redis, Cassandra)", "area": "Dados" },
+    "modelagem_dw": { "nome": "Modelagem dimensional e Data Warehouse", "area": "Dados" },
+    "etl_orquestracao": { "nome": "ETL/ELT e orquestracao (Airflow, dbt)", "area": "Dados" },
+    "spark_bigdata": { "nome": "Processamento distribuido (Spark, streaming)", "area": "Dados" },
+    "python_dados": { "nome": "Python para dados (Pandas, NumPy)", "area": "Dados" },
+    "estatistica": { "nome": "Estatistica e probabilidade aplicadas", "area": "Analitico" },
+    "ml": { "nome": "Machine Learning (scikit-learn, avaliacao de modelos)", "area": "Analitico" },
+    "mlops": { "nome": "MLOps e deploy de modelos", "area": "Analitico" },
+    "viz_dados": { "nome": "Visualizacao de dados e storytelling (Power BI, Plotly)", "area": "Analitico" },
+    "html_css": { "nome": "HTML semantico e CSS moderno (Flex/Grid)", "area": "Front-end" },
+    "js_ts": { "nome": "JavaScript e TypeScript", "area": "Front-end" },
+    "framework_front": { "nome": "Framework de front-end (React, Vue, Angular)", "area": "Front-end" },
+    "design_ui_figma": { "nome": "Design de interface e Figma", "area": "Front-end" },
+    "acessibilidade": { "nome": "Acessibilidade (WCAG) e web performance", "area": "Front-end" },
+    "ux_research": { "nome": "Pesquisa com usuarios e testes de usabilidade", "area": "Produto" },
+    "docker": { "nome": "Containers e Docker", "area": "Infraestrutura" },
+    "kubernetes": { "nome": "Kubernetes e orquestracao de containers", "area": "Infraestrutura" },
+    "cicd": { "nome": "CI/CD (GitHub Actions, GitLab CI, Jenkins)", "area": "Infraestrutura" },
+    "iac_terraform": { "nome": "Infraestrutura como codigo (Terraform, Ansible)", "area": "Infraestrutura" },
+    "observabilidade": { "nome": "Observabilidade (Prometheus, Grafana, logs, SLO)", "area": "Infraestrutura" },
+    "cloud_basico": { "nome": "Fundamentos de nuvem (AWS/Azure/GCP)", "area": "Nuvem" },
+    "arquitetura_sistemas": { "nome": "Arquitetura de sistemas e padroes (microsservicos, DDD)", "area": "Nuvem" },
+    "custos_cloud": { "nome": "Governanca e otimizacao de custos em nuvem (FinOps)", "area": "Nuvem" },
+    "alta_disponibilidade": { "nome": "Alta disponibilidade, DR e escalabilidade", "area": "Nuvem" },
+    "seguranca_appsec": { "nome": "Seguranca de aplicacoes (OWASP Top 10)", "area": "Seguranca" },
+    "pentest_ferramentas": { "nome": "Pentest e ferramentas (Burp, Nmap, Metasploit)", "area": "Seguranca" },
+    "siem_resposta": { "nome": "SIEM, monitoramento e resposta a incidentes", "area": "Seguranca" },
+    "criptografia": { "nome": "Criptografia aplicada e PKI", "area": "Seguranca" },
+    "grc_normas": { "nome": "GRC: LGPD, ISO 27001, politicas de seguranca", "area": "Seguranca" },
+    "mobile_nativo": { "nome": "Mobile nativo (Kotlin/Android ou Swift/iOS)", "area": "Mobile" },
+    "mobile_cross": { "nome": "Mobile multiplataforma (Flutter, React Native)", "area": "Mobile" },
+    "store_publicacao": { "nome": "Publicacao nas lojas e ciclo de release mobile", "area": "Mobile" },
+    "testes_manuais": { "nome": "Tecnicas de teste e casos de teste", "area": "Qualidade" },
+    "testes_automacao_web": { "nome": "Automacao de testes web (Selenium, Cypress, Playwright)", "area": "Qualidade" },
+    "testes_api_perf": { "nome": "Testes de API e de performance (Postman, k6, JMeter)", "area": "Qualidade" },
+    "qualidade_processo": { "nome": "Processo de qualidade, bug tracking e criterios de aceite", "area": "Qualidade" },
+    "agil_scrum": { "nome": "Metodos ageis (Scrum, Kanban)", "area": "Produto" },
+    "discovery_produto": { "nome": "Discovery, entrevistas e descoberta de problemas", "area": "Produto" },
+    "metricas_produto": { "nome": "Metricas de produto e analise de funil (KPIs, AARRR)", "area": "Produto" },
+    "roadmap_priorizacao": { "nome": "Roadmap e priorizacao (RICE, MoSCoW)", "area": "Produto" },
+    "comunicacao_escrita": { "nome": "Comunicacao escrita e documentacao tecnica", "area": "Transversal" },
+    "ingles_tecnico": { "nome": "Ingles tecnico (leitura e conversacao)", "area": "Transversal" }
+  },
+
+  "trilhas": {
+    "BACKEND": {
+      "nome": "Back-end",
+      "resumo": "Constroi a logica invisivel do sistema: APIs, regras de negocio, integracoes e persistencia de dados.",
+      "dia_a_dia": "Modelar entidades, escrever e revisar endpoints, otimizar consultas lentas, integrar servicos de terceiros e escrever testes.",
+      "faixa_salarial": { "junior": "R$ 3.000 - R$ 5.500", "pleno": "R$ 6.000 - R$ 11.000", "senior": "R$ 12.000 - R$ 22.000+" },
+      "maturidade_mercado": "Altissima demanda e a maior quantidade absoluta de vagas em TI.",
+      "competencias": [
+        { "id": "logica_prog", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "git", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 2 },
+        { "id": "linguagem_backend", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 12 },
+        { "id": "api_rest", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "sql", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "orm_persistencia", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 4 },
+        { "id": "algoritmos_ed", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 6 },
+        { "id": "docker", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 3 },
+        { "id": "seguranca_appsec", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 3 },
+        { "id": "mensageria_filas", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 4 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-3 meses)", "itens": ["logica_prog", "git", "sql"] },
+        { "fase": "2. Nucleo da trilha (3-7 meses)", "itens": ["linguagem_backend", "api_rest", "orm_persistencia"] },
+        { "fase": "3. Pronto para Junior (7-10 meses)", "itens": ["docker", "algoritmos_ed", "seguranca_appsec", "ingles_tecnico"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["mensageria_filas", "arquitetura_sistemas", "observabilidade"] }
+      ],
+      "certificacoes": [
+        { "nome": "Oracle Certified Professional: Java SE Developer", "emissor": "Oracle", "custo": "Pago", "quando": "Se a trilha for Java e houver foco em grandes empresas" },
+        { "nome": "Microsoft Certified: Azure Developer Associate (AZ-204)", "emissor": "Microsoft", "custo": "Pago", "quando": "Se a stack for .NET ou a empresa usar Azure" },
+        { "nome": "AWS Certified Developer - Associate", "emissor": "AWS", "custo": "Pago", "quando": "Para vagas com integracao a nuvem" },
+        { "nome": "freeCodeCamp - Back End Development and APIs", "emissor": "freeCodeCamp", "custo": "Gratuito", "quando": "Primeiro certificado, para validar fundamentos" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "API REST completa com autenticacao", "descricao": "CRUD com usuarios, papeis, JWT, validacao, paginacao e documentacao OpenAPI/Swagger.", "diferencial": "Inclua testes automatizados e um README explicando as decisoes de modelagem." },
+        { "titulo": "Integracao com servico externo real", "descricao": "Consumir uma API publica (pagamentos de teste, CEP, clima) com tratamento de falhas e retry.", "diferencial": "Demonstrar cache e circuit breaker simples ja coloca voce acima da media dos juniores." },
+        { "titulo": "Projeto com Docker Compose", "descricao": "Aplicacao + banco de dados subindo com um unico comando.", "diferencial": "Recrutador consegue rodar seu projeto em 30 segundos: isso aumenta muito a taxa de resposta." }
+      ],
+      "armadilhas": ["Aprender framework antes da linguagem.", "Nunca escrever testes.", "Portfolio so com tutoriais copiados, sem nenhuma decisao propria."]
+    },
+
+    "FRONTEND_UX": {
+      "nome": "Front-end / UX",
+      "resumo": "Constroi a interface e a experiencia que o usuario de fato ve, toca e julga.",
+      "dia_a_dia": "Transformar telas do Figma em componentes, cuidar de responsividade e acessibilidade, consumir APIs e investigar problemas de performance de renderizacao.",
+      "faixa_salarial": { "junior": "R$ 2.800 - R$ 5.000", "pleno": "R$ 5.500 - R$ 10.000", "senior": "R$ 11.000 - R$ 20.000+" },
+      "maturidade_mercado": "Porta de entrada mais acessivel em TI, porem com alta concorrencia no nivel Junior.",
+      "competencias": [
+        { "id": "html_css", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "js_ts", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 10 },
+        { "id": "framework_front", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 10 },
+        { "id": "git", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 2 },
+        { "id": "design_ui_figma", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 4 },
+        { "id": "api_rest", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 3 },
+        { "id": "acessibilidade", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 3 },
+        { "id": "testes_automacao_web", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 4 },
+        { "id": "ux_research", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 4 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-3 meses)", "itens": ["html_css", "git", "logica_prog"] },
+        { "fase": "2. Nucleo da trilha (3-7 meses)", "itens": ["js_ts", "framework_front", "api_rest"] },
+        { "fase": "3. Pronto para Junior (7-9 meses)", "itens": ["design_ui_figma", "acessibilidade", "ingles_tecnico"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["testes_automacao_web", "ux_research", "arquitetura_sistemas"] }
+      ],
+      "certificacoes": [
+        { "nome": "freeCodeCamp - Responsive Web Design + JavaScript Algorithms", "emissor": "freeCodeCamp", "custo": "Gratuito", "quando": "Logo no inicio: e gratuito e cobre bem os fundamentos" },
+        { "nome": "Google UX Design Professional Certificate", "emissor": "Google / Coursera", "custo": "Pago (com bolsas)", "quando": "Se quiser pender para o lado de UX" },
+        { "nome": "Meta Front-End Developer Certificate", "emissor": "Meta / Coursera", "custo": "Pago", "quando": "Para quem precisa de estrutura e prazo definido" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "Aplicacao que consome uma API publica", "descricao": "Busca, filtros, paginacao, estados de carregamento e de erro bem tratados.", "diferencial": "Tratar o estado de erro e de lista vazia e o que separa junior de iniciante." },
+        { "titulo": "Design system em miniatura", "descricao": "Biblioteca de 8 a 10 componentes com tokens de cor, tipografia e documentacao.", "diferencial": "Publique no Storybook: mostra maturidade de engenharia de front-end." },
+        { "titulo": "Redesign de um site real com justificativa", "descricao": "Antes/depois de uma interface ruim, com explicacao das decisoes de usabilidade.", "diferencial": "Documentar o porque de cada mudanca vale mais do que o resultado visual." }
+      ],
+      "armadilhas": ["Colecionar frameworks sem dominar JavaScript puro.", "Ignorar acessibilidade.", "Portfolio com clones de Netflix sem nada autoral."]
+    },
+
+    "DATA_SCIENCE": {
+      "nome": "Cientista de Dados",
+      "resumo": "Usa estatistica e aprendizado de maquina para transformar dados em previsoes e decisoes.",
+      "dia_a_dia": "Formular hipoteses, limpar dados, treinar e avaliar modelos, desenhar experimentos e apresentar resultados para areas de negocio.",
+      "faixa_salarial": { "junior": "R$ 4.000 - R$ 7.000", "pleno": "R$ 8.000 - R$ 14.000", "senior": "R$ 15.000 - R$ 26.000+" },
+      "maturidade_mercado": "Demanda forte, porem com poucas vagas realmente Junior: exige portfolio consistente.",
+      "competencias": [
+        { "id": "python_dados", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "estatistica", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 12 },
+        { "id": "sql", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "ml", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 12 },
+        { "id": "viz_dados", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 4 },
+        { "id": "git", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 2 },
+        { "id": "comunicacao_escrita", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 0 },
+        { "id": "mlops", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 6 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-4 meses)", "itens": ["python_dados", "sql", "estatistica"] },
+        { "fase": "2. Nucleo da trilha (4-9 meses)", "itens": ["ml", "viz_dados", "comunicacao_escrita"] },
+        { "fase": "3. Pronto para Junior (9-12 meses)", "itens": ["git", "ingles_tecnico", "etl_orquestracao"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["mlops", "spark_bigdata", "pesquisa_aplicada"] }
+      ],
+      "certificacoes": [
+        { "nome": "Google Advanced Data Analytics Certificate", "emissor": "Google / Coursera", "custo": "Pago (com bolsas)", "quando": "Para estruturar o aprendizado do zero" },
+        { "nome": "Machine Learning Specialization (Andrew Ng)", "emissor": "DeepLearning.AI", "custo": "Auditavel gratis", "quando": "Base conceitual solida de ML" },
+        { "nome": "Kaggle Competitions e Notebooks publicos", "emissor": "Kaggle", "custo": "Gratuito", "quando": "Vale mais que certificado: e portfolio verificavel" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "Analise end-to-end de um problema real", "descricao": "Da coleta a conclusao, com perguntas de negocio explicitas e limitacoes declaradas.", "diferencial": "Declarar as limitacoes do modelo demonstra maturidade estatistica." },
+        { "titulo": "Modelo preditivo com avaliacao honesta", "descricao": "Baseline, validacao cruzada, matriz de confusao e discussao de metricas alem da acuracia.", "diferencial": "Comparar contra um baseline simples e sinal claro de rigor." },
+        { "titulo": "Dashboard ou relatorio para nao tecnicos", "descricao": "Mesma analise traduzida em uma pagina que um gestor entenda em 2 minutos.", "diferencial": "Comprova a competencia mais escassa da area: comunicacao." }
+      ],
+      "armadilhas": ["Pular estatistica e ir direto para bibliotecas de ML.", "Usar apenas datasets de tutorial (Titanic, Iris).", "Buscar acuracia alta sem entender o problema de negocio."]
+    },
+
+    "DATA_ENG": {
+      "nome": "Engenheiro de Dados",
+      "resumo": "Constroi e mantem a infraestrutura que coleta, transforma e disponibiliza dados em escala.",
+      "dia_a_dia": "Criar pipelines de ingestao, modelar camadas do data warehouse, orquestrar jobs, monitorar qualidade e custo dos dados.",
+      "faixa_salarial": { "junior": "R$ 4.500 - R$ 7.500", "pleno": "R$ 9.000 - R$ 15.000", "senior": "R$ 16.000 - R$ 28.000+" },
+      "maturidade_mercado": "Uma das maiores relacoes demanda/oferta do mercado atual; escassez real de profissionais.",
+      "competencias": [
+        { "id": "sql", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "python_dados", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "modelagem_dw", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "etl_orquestracao", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "cloud_basico", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "linux_cli", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 3 },
+        { "id": "docker", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 3 },
+        { "id": "spark_bigdata", "nivel_minimo_junior": 1, "criticidade": "importante", "semanas_estudo": 8 },
+        { "id": "nosql", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 3 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-3 meses)", "itens": ["sql", "python_dados", "linux_cli"] },
+        { "fase": "2. Nucleo da trilha (3-8 meses)", "itens": ["modelagem_dw", "etl_orquestracao", "cloud_basico"] },
+        { "fase": "3. Pronto para Junior (8-11 meses)", "itens": ["docker", "spark_bigdata", "ingles_tecnico"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["cicd", "iac_terraform", "custos_cloud"] }
+      ],
+      "certificacoes": [
+        { "nome": "AWS Certified Data Engineer - Associate", "emissor": "AWS", "custo": "Pago", "quando": "Quando ja tiver 1 pipeline real no portfolio" },
+        { "nome": "Google Professional Data Engineer", "emissor": "Google Cloud", "custo": "Pago", "quando": "Em empresas que usam BigQuery" },
+        { "nome": "dbt Fundamentals", "emissor": "dbt Labs", "custo": "Gratuito", "quando": "Alto retorno sobre o tempo investido: faca cedo" },
+        { "nome": "Databricks Lakehouse Fundamentals", "emissor": "Databricks", "custo": "Gratuito", "quando": "Para contexto de Spark e lakehouse" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "Pipeline ELT agendado de ponta a ponta", "descricao": "Extrai de uma API publica, carrega em um banco analitico e transforma em camadas bronze/silver/gold.", "diferencial": "Orquestrar com Airflow e versionar as transformacoes com dbt vale mais que qualquer certificado." },
+        { "titulo": "Testes de qualidade de dados", "descricao": "Validacoes automaticas de nulos, unicidade e faixas de valores que falham o pipeline quando violadas.", "diferencial": "Poucos candidatos juniores pensam em qualidade de dados: isso chama atencao." },
+        { "titulo": "Pipeline de streaming simples", "descricao": "Ingestao continua com Kafka ou equivalente e consumo em tempo quase real.", "diferencial": "Mostra que voce entende a diferenca entre batch e streaming na pratica." }
+      ],
+      "armadilhas": ["Aprender Spark sem dominar SQL.", "Ignorar custo: pipeline caro e pipeline rejeitado.", "Nao versionar transformacoes."]
+    },
+
+    "CIBERSEGURANCA": {
+      "nome": "Ciberseguranca",
+      "resumo": "Protege sistemas, dados e pessoas: identifica vulnerabilidades, detecta ataques e responde a incidentes.",
+      "dia_a_dia": "Analisar alertas, conduzir testes de intrusao, revisar configuracoes, escrever laudos e politicas, treinar outras equipes.",
+      "faixa_salarial": { "junior": "R$ 4.000 - R$ 7.000", "pleno": "R$ 8.000 - R$ 15.000", "senior": "R$ 16.000 - R$ 30.000+" },
+      "maturidade_mercado": "Deficit global de profissionais; LGPD aumentou muito a demanda no Brasil.",
+      "competencias": [
+        { "id": "redes_tcpip", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "linux_cli", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "seguranca_appsec", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "pentest_ferramentas", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "criptografia", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 5 },
+        { "id": "siem_resposta", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "grc_normas", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 4 },
+        { "id": "automacao_scripting_sec", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 5, "nome_alternativo": "Scripting para seguranca (Python/Bash)" },
+        { "id": "cloud_basico", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 5 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-4 meses)", "itens": ["redes_tcpip", "linux_cli", "logica_prog"] },
+        { "fase": "2. Nucleo da trilha (4-9 meses)", "itens": ["seguranca_appsec", "pentest_ferramentas", "criptografia"] },
+        { "fase": "3. Pronto para Junior (9-13 meses)", "itens": ["siem_resposta", "grc_normas", "ingles_tecnico"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["cloud_basico", "forense_digital", "red_team_avancado"] }
+      ],
+      "certificacoes": [
+        { "nome": "CompTIA Security+", "emissor": "CompTIA", "custo": "Pago", "quando": "Certificacao de entrada mais reconhecida da area" },
+        { "nome": "eJPT (eLearnSecurity Junior Penetration Tester)", "emissor": "INE", "custo": "Pago", "quando": "Se o foco for pentest ofensivo" },
+        { "nome": "TryHackMe / Hack The Box - trilhas praticas", "emissor": "THM / HTB", "custo": "Freemium", "quando": "Desde o primeiro mes: constroi pratica real" },
+        { "nome": "ISC2 Certified in Cybersecurity (CC)", "emissor": "ISC2", "custo": "Gratuito (exame subsidiado)", "quando": "Excelente primeiro certificado sem custo" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "Laboratorio de pentest documentado", "descricao": "Relatorios de maquinas resolvidas em ambiente autorizado, com achados, impacto e correcao proposta.", "diferencial": "O relatorio bem escrito vale mais que a invasao: e isso que o cliente compra." },
+        { "titulo": "Hardening de um ambiente", "descricao": "Antes/depois de um servidor Linux ou de uma conta de nuvem, com checklist CIS aplicado.", "diferencial": "Demonstra o lado defensivo (blue team), onde estao mais vagas." },
+        { "titulo": "Ferramenta propria de automacao", "descricao": "Script que verifica configuracoes, coleta evidencias ou correlaciona logs.", "diferencial": "Mostra que voce programa, nao apenas opera ferramentas prontas." }
+      ],
+      "armadilhas": ["Querer ser pentester sem saber redes e Linux.", "Testar sistemas sem autorizacao formal (e crime).", "Ignorar o lado defensivo e de conformidade, que concentra mais vagas."]
+    },
+
+    "DEVOPS_SRE": {
+      "nome": "DevOps / SRE",
+      "resumo": "Garante que o software chegue a producao rapido e continue de pe, com automacao e observabilidade.",
+      "dia_a_dia": "Manter pipelines de CI/CD, provisionar infraestrutura por codigo, investigar degradacoes, definir SLOs e reduzir trabalho manual.",
+      "faixa_salarial": { "junior": "R$ 4.500 - R$ 7.500", "pleno": "R$ 9.000 - R$ 16.000", "senior": "R$ 17.000 - R$ 30.000+" },
+      "maturidade_mercado": "Remuneracao alta, mas praticamente nao existe vaga 'Junior zero': costuma ser segunda carreira.",
+      "competencias": [
+        { "id": "linux_cli", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "redes_tcpip", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "docker", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 4 },
+        { "id": "cicd", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 5 },
+        { "id": "iac_terraform", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "cloud_basico", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "observabilidade", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 5 },
+        { "id": "kubernetes", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 10 },
+        { "id": "logica_prog", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 8 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-4 meses)", "itens": ["linux_cli", "redes_tcpip", "git"] },
+        { "fase": "2. Nucleo da trilha (4-9 meses)", "itens": ["docker", "cicd", "cloud_basico"] },
+        { "fase": "3. Pronto para Junior (9-14 meses)", "itens": ["iac_terraform", "observabilidade", "kubernetes"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["alta_disponibilidade", "custos_cloud", "engenharia_de_caos"] }
+      ],
+      "certificacoes": [
+        { "nome": "AWS Certified Solutions Architect - Associate", "emissor": "AWS", "custo": "Pago", "quando": "Melhor relacao custo/beneficio para entrar na area" },
+        { "nome": "CKA - Certified Kubernetes Administrator", "emissor": "CNCF", "custo": "Pago", "quando": "Depois de ja operar um cluster proprio" },
+        { "nome": "HashiCorp Certified: Terraform Associate", "emissor": "HashiCorp", "custo": "Pago", "quando": "Logo apos dominar o basico de IaC" },
+        { "nome": "Linux Foundation - Introduction to Linux (LFS101)", "emissor": "Linux Foundation", "custo": "Gratuito", "quando": "Primeiro passo se vier de fora da area" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "Pipeline CI/CD completo em repositorio publico", "descricao": "Build, testes, analise estatica, construcao de imagem e deploy automatico em ambiente real.", "diferencial": "Um badge verde e um deploy funcionando dizem mais que o curriculo inteiro." },
+        { "titulo": "Infraestrutura inteira como codigo", "descricao": "Terraform que cria rede, maquinas, banco e regras de acesso do zero com um comando.", "diferencial": "Inclua destroy limpo e documentacao de custo estimado." },
+        { "titulo": "Stack de observabilidade com SLO definido", "descricao": "Prometheus + Grafana monitorando uma aplicacao, com alertas e um SLO escrito.", "diferencial": "Definir SLO e error budget e linguagem de SRE senior." }
+      ],
+      "armadilhas": ["Aprender Kubernetes antes de Linux e redes.", "Automatizar sem entender o que esta automatizando.", "Esperar vaga Junior: considere entrar por suporte, infra ou back-end."]
+    },
+
+    "CLOUD_ARCH": {
+      "nome": "Cloud Architecture",
+      "resumo": "Desenha solucoes na nuvem equilibrando custo, desempenho, seguranca e disponibilidade.",
+      "dia_a_dia": "Produzir diagramas e documentos de decisao, avaliar servicos, revisar custos, orientar times e negociar requisitos com o negocio.",
+      "faixa_salarial": { "junior": "Raro no nivel Junior", "pleno": "R$ 12.000 - R$ 18.000", "senior": "R$ 20.000 - R$ 40.000+" },
+      "maturidade_mercado": "Papel senior por natureza: e destino de carreira, nao ponto de partida.",
+      "competencias": [
+        { "id": "cloud_basico", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 10 },
+        { "id": "arquitetura_sistemas", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 12 },
+        { "id": "redes_tcpip", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "alta_disponibilidade", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "iac_terraform", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "custos_cloud", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 4 },
+        { "id": "seguranca_appsec", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 5 },
+        { "id": "comunicacao_escrita", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 0 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-5 meses)", "itens": ["redes_tcpip", "linux_cli", "cloud_basico"] },
+        { "fase": "2. Nucleo da trilha (5-12 meses)", "itens": ["arquitetura_sistemas", "iac_terraform", "alta_disponibilidade"] },
+        { "fase": "3. Consolidacao (12-20 meses)", "itens": ["custos_cloud", "seguranca_appsec", "comunicacao_escrita"] },
+        { "fase": "4. Diferenciais de arquiteto", "itens": ["multicloud", "governanca_corporativa", "well_architected_review"] }
+      ],
+      "certificacoes": [
+        { "nome": "AWS Certified Solutions Architect - Professional", "emissor": "AWS", "custo": "Pago", "quando": "Apos o nivel Associate e experiencia pratica" },
+        { "nome": "Azure Solutions Architect Expert (AZ-305)", "emissor": "Microsoft", "custo": "Pago", "quando": "Em empresas de ecossistema Microsoft" },
+        { "nome": "AWS Cloud Practitioner / Azure Fundamentals (AZ-900)", "emissor": "AWS / Microsoft", "custo": "Pago (barato)", "quando": "Primeiro contato formal com a nuvem" },
+        { "nome": "Google Cloud Digital Leader", "emissor": "Google Cloud", "custo": "Pago", "quando": "Para reforcar o vocabulario de negocio da nuvem" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "Documento de arquitetura (ADR) de um sistema real", "descricao": "Requisitos, alternativas avaliadas, decisao tomada, trade-offs e riscos aceitos.", "diferencial": "Arquiteto e avaliado pela qualidade do raciocinio escrito, nao pelo diagrama bonito." },
+        { "titulo": "Ambiente multi-zona com failover demonstrado", "descricao": "Aplicacao que continua respondendo apos a queda de uma zona, com evidencia em video.", "diferencial": "Provar resiliencia com teste real impressiona muito mais que a teoria." },
+        { "titulo": "Analise de reducao de custo", "descricao": "Diagnostico de um ambiente com proposta quantificada de economia mensal.", "diferencial": "Mostrar impacto financeiro conecta tecnologia a linguagem da diretoria." }
+      ],
+      "armadilhas": ["Tentar ser arquiteto sem nunca ter operado producao.", "Colecionar certificados sem pratica.", "Desenhar solucoes caras demais para o problema real."]
+    },
+
+    "MOBILE": {
+      "nome": "Mobile",
+      "resumo": "Desenvolve aplicativos para celulares e tablets, lidando com restricoes de tela, bateria e conectividade.",
+      "dia_a_dia": "Implementar telas e navegacao, integrar APIs e recursos do dispositivo, tratar modo offline, publicar e monitorar versoes nas lojas.",
+      "faixa_salarial": { "junior": "R$ 3.200 - R$ 5.500", "pleno": "R$ 6.500 - R$ 12.000", "senior": "R$ 13.000 - R$ 22.000+" },
+      "maturidade_mercado": "Menos vagas que web, porem concorrencia tambem menor e especializacao valorizada.",
+      "competencias": [
+        { "id": "logica_prog", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "mobile_cross", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 12 },
+        { "id": "api_rest", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 4 },
+        { "id": "git", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 2 },
+        { "id": "design_ui_figma", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 4 },
+        { "id": "store_publicacao", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 3 },
+        { "id": "mobile_nativo", "nivel_minimo_junior": 1, "criticidade": "importante", "semanas_estudo": 12 },
+        { "id": "testes_automacao_web", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 4 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-3 meses)", "itens": ["logica_prog", "git", "api_rest"] },
+        { "fase": "2. Nucleo da trilha (3-8 meses)", "itens": ["mobile_cross", "design_ui_figma", "store_publicacao"] },
+        { "fase": "3. Pronto para Junior (8-11 meses)", "itens": ["mobile_nativo", "ingles_tecnico", "offline_first"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["testes_automacao_web", "cicd", "performance_mobile"] }
+      ],
+      "certificacoes": [
+        { "nome": "Google Associate Android Developer", "emissor": "Google", "custo": "Pago", "quando": "Se o foco for Android nativo" },
+        { "nome": "Flutter - trilha oficial do Google Developers", "emissor": "Google", "custo": "Gratuito", "quando": "Caminho mais rapido para o primeiro app publicado" },
+        { "nome": "Meta iOS Developer Certificate", "emissor": "Meta / Coursera", "custo": "Pago", "quando": "Se tiver acesso a um Mac e quiser iOS" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "App publicado em loja (ou APK instalavel)", "descricao": "Aplicativo proprio resolvendo um problema real, com icone, splash e politica de privacidade.", "diferencial": "Ter passado pelo processo de publicacao e o maior diferencial da trilha." },
+        { "titulo": "App com funcionamento offline", "descricao": "Banco local, sincronizacao ao reconectar e tratamento de conflitos.", "diferencial": "Offline-first e uma dor real do mercado e poucos juniores dominam." },
+        { "titulo": "App que usa recursos do dispositivo", "descricao": "Camera, GPS, biometria ou notificacoes push integrados de forma util.", "diferencial": "Demonstra que voce sai do CRUD e entende a plataforma." }
+      ],
+      "armadilhas": ["Nunca publicar nada em loja.", "Ignorar performance em aparelhos modestos.", "Testar apenas no emulador."]
+    },
+
+    "QA": {
+      "nome": "QA / Qualidade de Software",
+      "resumo": "Garante que o software faz o que promete, prevenindo defeitos antes do usuario encontra-los.",
+      "dia_a_dia": "Projetar e executar casos de teste, automatizar regressao, validar APIs, reportar defeitos com clareza e participar de refinamentos.",
+      "faixa_salarial": { "junior": "R$ 2.800 - R$ 4.800", "pleno": "R$ 5.500 - R$ 10.000", "senior": "R$ 11.000 - R$ 18.000+" },
+      "maturidade_mercado": "Porta de entrada mais realista em TI; QA com automacao cresce rapido em salario.",
+      "competencias": [
+        { "id": "testes_manuais", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 4 },
+        { "id": "qualidade_processo", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 3 },
+        { "id": "testes_api_perf", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 4 },
+        { "id": "testes_automacao_web", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "logica_prog", "nivel_minimo_junior": 2, "criticidade": "essencial", "semanas_estudo": 8 },
+        { "id": "sql", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 4 },
+        { "id": "git", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 2 },
+        { "id": "agil_scrum", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 2 },
+        { "id": "cicd", "nivel_minimo_junior": 1, "criticidade": "diferencial", "semanas_estudo": 4 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-2 meses)", "itens": ["testes_manuais", "qualidade_processo", "agil_scrum"] },
+        { "fase": "2. Nucleo da trilha (2-6 meses)", "itens": ["testes_api_perf", "logica_prog", "sql"] },
+        { "fase": "3. Pronto para Junior (6-9 meses)", "itens": ["testes_automacao_web", "git", "ingles_tecnico"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["cicd", "testes_contrato", "estrategia_de_qualidade"] }
+      ],
+      "certificacoes": [
+        { "nome": "CTFL - Certified Tester Foundation Level (ISTQB)", "emissor": "ISTQB / BSTQB", "custo": "Pago", "quando": "Certificacao padrao da area; muito citada em vagas" },
+        { "nome": "Postman API Fundamentals Student Expert", "emissor": "Postman", "custo": "Gratuito", "quando": "Rapida e ja aparece bem no LinkedIn" },
+        { "nome": "Cypress / Playwright - trilhas oficiais", "emissor": "Cypress / Microsoft", "custo": "Gratuito", "quando": "Ao iniciar automacao web" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "Suite de testes automatizados rodando no CI", "descricao": "Cenarios web em Cypress ou Playwright executados a cada push, com relatorio publicado.", "diferencial": "Relatorio publico de execucao comprova que a suite realmente roda." },
+        { "titulo": "Plano de teste de um sistema real", "descricao": "Analise de riscos, criterios de aceite, matriz de rastreabilidade e casos priorizados.", "diferencial": "Mostra pensamento de qualidade, nao apenas execucao de cliques." },
+        { "titulo": "Colecao de testes de API com validacoes", "descricao": "Postman ou k6 cobrindo contrato, erros, limites e um teste de carga simples.", "diferencial": "Teste de performance mesmo simples diferencia de imediato." }
+      ],
+      "armadilhas": ["Ficar so no teste manual e estagnar o salario.", "Reportar bugs sem passos reproduziveis.", "Automatizar a tela toda em vez de focar no risco."]
+    },
+
+    "PRODUCT_MGMT": {
+      "nome": "Product Management",
+      "resumo": "Decide o que construir e por que: conecta problema do usuario, objetivo do negocio e capacidade do time.",
+      "dia_a_dia": "Entrevistar usuarios, analisar metricas, priorizar o backlog, alinhar areas, escrever especificacoes e medir resultados pos-lancamento.",
+      "faixa_salarial": { "junior": "R$ 4.000 - R$ 7.000 (Analista de Produto/APM)", "pleno": "R$ 8.000 - R$ 15.000", "senior": "R$ 16.000 - R$ 30.000+" },
+      "maturidade_mercado": "Vagas disputadas; a entrada quase sempre vem de transicao interna (QA, suporte, dados, dev).",
+      "competencias": [
+        { "id": "discovery_produto", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "metricas_produto", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 6 },
+        { "id": "roadmap_priorizacao", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 4 },
+        { "id": "comunicacao_escrita", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 0 },
+        { "id": "agil_scrum", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 3 },
+        { "id": "ux_research", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 5 },
+        { "id": "sql", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 5 },
+        { "id": "viz_dados", "nivel_minimo_junior": 2, "criticidade": "importante", "semanas_estudo": 3 },
+        { "id": "ingles_tecnico", "nivel_minimo_junior": 3, "criticidade": "essencial", "semanas_estudo": 0 }
+      ],
+      "roadmap": [
+        { "fase": "1. Fundamentos (0-3 meses)", "itens": ["agil_scrum", "comunicacao_escrita", "metricas_produto"] },
+        { "fase": "2. Nucleo da trilha (3-7 meses)", "itens": ["discovery_produto", "roadmap_priorizacao", "ux_research"] },
+        { "fase": "3. Pronto para Junior (7-11 meses)", "itens": ["sql", "viz_dados", "ingles_tecnico"] },
+        { "fase": "4. Diferenciais para Pleno", "itens": ["experimentacao_ab", "estrategia_de_produto", "modelos_de_negocio"] }
+      ],
+      "certificacoes": [
+        { "nome": "Professional Scrum Product Owner I (PSPO I)", "emissor": "Scrum.org", "custo": "Pago", "quando": "Credencial mais citada em vagas de produto" },
+        { "nome": "Certified Scrum Product Owner (CSPO)", "emissor": "Scrum Alliance", "custo": "Pago (curso obrigatorio)", "quando": "Se a empresa valorizar Scrum Alliance" },
+        { "nome": "Google Project Management Certificate", "emissor": "Google / Coursera", "custo": "Pago (com bolsas)", "quando": "Para quem vem de fora de TI" },
+        { "nome": "Reforge / Product School (conteudos gratuitos)", "emissor": "Diversos", "custo": "Freemium", "quando": "Para vocabulario e frameworks atualizados" }
+      ],
+      "projetos_portfolio": [
+        { "titulo": "Case de discovery completo", "descricao": "Problema, 5 entrevistas reais, hipoteses, solucao proposta e metrica de sucesso definida.", "diferencial": "Entrevistas reais (mesmo com conhecidos) separam voce de quem so leu teoria." },
+        { "titulo": "Analise critica de um produto existente", "descricao": "Teardown de um app com funil, pontos de atrito e tres melhorias priorizadas por RICE.", "diferencial": "Priorizar com criterio explicito demonstra o nucleo do trabalho de PM." },
+        { "titulo": "MVP lancado de verdade", "descricao": "Produto simples (pode ser no-code) colocado no ar com usuarios reais e metricas coletadas.", "diferencial": "Ter numeros reais de uso e o argumento mais forte em qualquer entrevista de produto." }
+      ],
+      "armadilhas": ["Achar que PM e 'chefe do time'.", "Priorizar por opiniao em vez de dados.", "Tentar entrar em produto sem nenhuma vivencia de time de tecnologia."]
+    }
+  },
+
+  "competencias_extra": {
+    "offline_first": { "nome": "Arquitetura offline-first e sincronizacao", "area": "Mobile" },
+    "performance_mobile": { "nome": "Performance e consumo de bateria em mobile", "area": "Mobile" },
+    "automacao_scripting_sec": { "nome": "Scripting para seguranca (Python/Bash)", "area": "Seguranca" },
+    "forense_digital": { "nome": "Forense digital e analise de artefatos", "area": "Seguranca" },
+    "red_team_avancado": { "nome": "Operacoes ofensivas avancadas (red team)", "area": "Seguranca" },
+    "engenharia_de_caos": { "nome": "Engenharia de caos e testes de resiliencia", "area": "Infraestrutura" },
+    "multicloud": { "nome": "Estrategia multicloud e portabilidade", "area": "Nuvem" },
+    "governanca_corporativa": { "nome": "Governanca corporativa de nuvem (landing zone)", "area": "Nuvem" },
+    "well_architected_review": { "nome": "Revisao de arquitetura (Well-Architected Review)", "area": "Nuvem" },
+    "testes_contrato": { "nome": "Testes de contrato entre servicos", "area": "Qualidade" },
+    "estrategia_de_qualidade": { "nome": "Estrategia de qualidade e shift-left", "area": "Qualidade" },
+    "pesquisa_aplicada": { "nome": "Pesquisa aplicada e leitura de artigos cientificos", "area": "Analitico" },
+    "experimentacao_ab": { "nome": "Experimentacao e testes A/B", "area": "Produto" },
+    "estrategia_de_produto": { "nome": "Estrategia e visao de produto", "area": "Produto" },
+    "modelos_de_negocio": { "nome": "Modelos de negocio e unit economics", "area": "Produto" }
+  },
+
+  "niveis_experiencia": [
+    { "id": "zero", "rotulo": "Nunca trabalhei nem estudei TI formalmente", "fator_maturidade": 0.0, "nota": "Comece pela fase 1 do roadmap sem pular etapas." },
+    { "id": "estudante", "rotulo": "Estudante de TI, sem experiencia profissional", "fator_maturidade": 0.25, "nota": "Priorize portfolio: ele substitui a experiencia que voce ainda nao tem." },
+    { "id": "transicao", "rotulo": "Em transicao de outra area de atuacao", "fator_maturidade": 0.35, "nota": "Sua experiencia anterior e um diferencial real: ligue-a ao dominio da vaga." },
+    { "id": "suporte_infra", "rotulo": "Ja atuo em TI (suporte, infra, help desk)", "fator_maturidade": 0.55, "nota": "Movimentacao interna e o caminho mais curto para a nova trilha." },
+    { "id": "junior_atuando", "rotulo": "Ja atuo como desenvolvedor/analista Junior", "fator_maturidade": 0.75, "nota": "Foque nos gaps de criticidade essencial para alcancar o nivel Pleno." }
+  ],
+
+  "disponibilidade_estudo": [
+    { "id": "ate_5h", "rotulo": "Ate 5 horas por semana", "horas": 4, "multiplicador_prazo": 2.4 },
+    { "id": "6_10h", "rotulo": "6 a 10 horas por semana", "horas": 8, "multiplicador_prazo": 1.5 },
+    { "id": "11_20h", "rotulo": "11 a 20 horas por semana", "horas": 15, "multiplicador_prazo": 1.0 },
+    { "id": "mais_20h", "rotulo": "Mais de 20 horas por semana (dedicacao intensa)", "horas": 25, "multiplicador_prazo": 0.65 }
+  ]
+}

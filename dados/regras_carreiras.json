@@ -1,0 +1,483 @@
+{
+  "metadados": {
+    "nome": "Base de Conhecimento - Consultor Avancado de Carreiras em TI",
+    "versao": "1.3.0",
+    "instituicao": "Centro Universitario Presidente Antonio Carlos - UNIPAC Barbacena",
+    "escala": "Likert 1-5",
+    "descricao": "Perguntas graduais, matriz de pesos de correlacao (dimensao x trilha), regras de certeza estilo MYCIN e regras de penalidade para perfis conflitantes. Nenhum conhecimento aqui esta hardcoded no motor de inferencia."
+  },
+
+  "configuracao": {
+    "escala_min": 1,
+    "escala_max": 5,
+    "pesos_modelo": {
+      "peso_forma": 0.55,
+      "peso_cobertura": 0.45,
+      "fator_penalidade_max": 0.3,
+      "fator_objetivos": 0.12
+    },
+    "limiar_empate": 4.0,
+    "limiar_ambiguidade_global": 6.0,
+    "top_n": 3,
+    "rotulos_likert": {
+      "1": "Nenhuma afinidade",
+      "2": "Pouca afinidade",
+      "3": "Afinidade moderada",
+      "4": "Muita afinidade",
+      "5": "Afinidade altissima - e exatamente o meu perfil"
+    }
+  },
+
+  "trilhas": {
+    "BACKEND": { "nome": "Back-end", "sigla": "SRV" },
+    "FRONTEND_UX": { "nome": "Front-end / UX", "sigla": "UI" },
+    "DATA_SCIENCE": { "nome": "Cientista de Dados", "sigla": "DS" },
+    "DATA_ENG": { "nome": "Engenheiro de Dados", "sigla": "DE" },
+    "CIBERSEGURANCA": { "nome": "Ciberseguranca", "sigla": "SEC" },
+    "DEVOPS_SRE": { "nome": "DevOps / SRE", "sigla": "OPS" },
+    "CLOUD_ARCH": { "nome": "Cloud Architecture", "sigla": "CLD" },
+    "MOBILE": { "nome": "Mobile", "sigla": "MOB" },
+    "QA": { "nome": "QA / Qualidade de Software", "sigla": "QA" },
+    "PRODUCT_MGMT": { "nome": "Product Management", "sigla": "PM" }
+  },
+
+  "dimensoes": [
+    {
+      "id": "matematica_estatistica",
+      "pergunta": "Qual o seu grau de afinidade com matematica, estatistica e raciocinio quantitativo?",
+      "ajuda": "Probabilidade, algebra linear, interpretacao de graficos e metricas.",
+      "categoria": "Aptidao analitica",
+      "pesos": { "BACKEND": 0.3, "FRONTEND_UX": -0.1, "DATA_SCIENCE": 1.0, "DATA_ENG": 0.55, "CIBERSEGURANCA": 0.35, "DEVOPS_SRE": 0.15, "CLOUD_ARCH": 0.2, "MOBILE": 0.1, "QA": 0.15, "PRODUCT_MGMT": 0.15 }
+    },
+    {
+      "id": "logica_algoritmos",
+      "pergunta": "Quanto voce gosta de resolver problemas de logica, algoritmos e estruturas de dados?",
+      "ajuda": "Exercicios de codigo, otimizacao, quebra-cabecas de programacao.",
+      "categoria": "Aptidao analitica",
+      "pesos": { "BACKEND": 0.95, "FRONTEND_UX": 0.4, "DATA_SCIENCE": 0.7, "DATA_ENG": 0.7, "CIBERSEGURANCA": 0.6, "DEVOPS_SRE": 0.5, "CLOUD_ARCH": 0.45, "MOBILE": 0.6, "QA": 0.5, "PRODUCT_MGMT": 0.2 }
+    },
+    {
+      "id": "design_visual",
+      "pergunta": "Qual sua afinidade com design visual, estetica, tipografia e composicao de telas?",
+      "ajuda": "Gosto por cores, espacamento, layout bonito e consistente.",
+      "categoria": "Criatividade e produto",
+      "pesos": { "BACKEND": -0.2, "FRONTEND_UX": 1.0, "DATA_SCIENCE": 0.05, "DATA_ENG": -0.3, "CIBERSEGURANCA": -0.15, "DEVOPS_SRE": -0.3, "CLOUD_ARCH": -0.2, "MOBILE": 0.6, "QA": 0.1, "PRODUCT_MGMT": 0.4 }
+    },
+    {
+      "id": "infraestrutura_redes",
+      "pergunta": "Quanto voce se interessa por infraestrutura, servidores, sistemas operacionais e redes?",
+      "ajuda": "Linux, TCP/IP, DNS, firewalls, maquinas virtuais, containers.",
+      "categoria": "Infraestrutura",
+      "pesos": { "BACKEND": 0.3, "FRONTEND_UX": -0.25, "DATA_SCIENCE": 0.05, "DATA_ENG": 0.5, "CIBERSEGURANCA": 0.8, "DEVOPS_SRE": 0.95, "CLOUD_ARCH": 1.0, "MOBILE": 0.0, "QA": 0.15, "PRODUCT_MGMT": -0.15 }
+    },
+    {
+      "id": "gestao_lideranca",
+      "pergunta": "Qual sua afinidade com gestao, lideranca de pessoas e coordenacao de equipes?",
+      "ajuda": "Conduzir reunioes, priorizar o trabalho do time, mediar conflitos.",
+      "categoria": "Pessoas e negocio",
+      "pesos": { "BACKEND": -0.1, "FRONTEND_UX": 0.1, "DATA_SCIENCE": 0.05, "DATA_ENG": 0.05, "CIBERSEGURANCA": 0.05, "DEVOPS_SRE": 0.15, "CLOUD_ARCH": 0.45, "MOBILE": 0.0, "QA": 0.2, "PRODUCT_MGMT": 1.0 }
+    },
+    {
+      "id": "automacao_scripting",
+      "pergunta": "Quanto voce gosta de automatizar tarefas repetitivas com scripts e ferramentas?",
+      "ajuda": "Bash, Python, pipelines de CI/CD, robos de automacao.",
+      "categoria": "Infraestrutura",
+      "pesos": { "BACKEND": 0.4, "FRONTEND_UX": 0.15, "DATA_SCIENCE": 0.3, "DATA_ENG": 0.7, "CIBERSEGURANCA": 0.6, "DEVOPS_SRE": 1.0, "CLOUD_ARCH": 0.6, "MOBILE": 0.2, "QA": 0.75, "PRODUCT_MGMT": -0.1 }
+    },
+    {
+      "id": "seguranca_investigacao",
+      "pergunta": "Qual seu interesse em seguranca da informacao, investigar falhas e pensar como um atacante?",
+      "ajuda": "Vulnerabilidades, criptografia, analise de incidentes, pentest.",
+      "categoria": "Seguranca",
+      "pesos": { "BACKEND": 0.2, "FRONTEND_UX": 0.05, "DATA_SCIENCE": 0.05, "DATA_ENG": 0.1, "CIBERSEGURANCA": 1.0, "DEVOPS_SRE": 0.35, "CLOUD_ARCH": 0.4, "MOBILE": 0.1, "QA": 0.2, "PRODUCT_MGMT": 0.0 }
+    },
+    {
+      "id": "banco_dados_modelagem",
+      "pergunta": "Quanto voce se identifica com modelagem de dados, SQL e organizacao da informacao?",
+      "ajuda": "Normalizacao, consultas complexas, relacionamentos entre entidades.",
+      "categoria": "Dados",
+      "pesos": { "BACKEND": 0.8, "FRONTEND_UX": 0.05, "DATA_SCIENCE": 0.65, "DATA_ENG": 1.0, "CIBERSEGURANCA": 0.2, "DEVOPS_SRE": 0.25, "CLOUD_ARCH": 0.45, "MOBILE": 0.2, "QA": 0.25, "PRODUCT_MGMT": 0.1 }
+    },
+    {
+      "id": "atencao_detalhes",
+      "pergunta": "Quao forte e sua atencao a detalhes e sua tolerancia a tarefas minuciosas de verificacao?",
+      "ajuda": "Encontrar inconsistencias, seguir checklists, nao deixar passar erros.",
+      "categoria": "Qualidade",
+      "pesos": { "BACKEND": 0.3, "FRONTEND_UX": 0.25, "DATA_SCIENCE": 0.3, "DATA_ENG": 0.4, "CIBERSEGURANCA": 0.55, "DEVOPS_SRE": 0.3, "CLOUD_ARCH": 0.25, "MOBILE": 0.25, "QA": 1.0, "PRODUCT_MGMT": 0.3 }
+    },
+    {
+      "id": "comunicacao_negocio",
+      "pergunta": "Qual sua afinidade com comunicacao, apresentacoes e traduzir tecnologia para o negocio?",
+      "ajuda": "Falar com clientes, escrever bem, defender ideias com dados.",
+      "categoria": "Pessoas e negocio",
+      "pesos": { "BACKEND": 0.1, "FRONTEND_UX": 0.4, "DATA_SCIENCE": 0.5, "DATA_ENG": 0.2, "CIBERSEGURANCA": 0.25, "DEVOPS_SRE": 0.15, "CLOUD_ARCH": 0.45, "MOBILE": 0.15, "QA": 0.3, "PRODUCT_MGMT": 1.0 }
+    },
+    {
+      "id": "experiencia_usuario",
+      "pergunta": "Quanto voce se preocupa com a experiencia de quem usa o sistema (usabilidade e empatia)?",
+      "ajuda": "Observar usuarios, simplificar fluxos, acessibilidade.",
+      "categoria": "Criatividade e produto",
+      "pesos": { "BACKEND": 0.05, "FRONTEND_UX": 1.0, "DATA_SCIENCE": 0.1, "DATA_ENG": -0.15, "CIBERSEGURANCA": 0.0, "DEVOPS_SRE": -0.1, "CLOUD_ARCH": 0.1, "MOBILE": 0.7, "QA": 0.35, "PRODUCT_MGMT": 0.65 }
+    },
+    {
+      "id": "dispositivos_moveis",
+      "pergunta": "Qual seu interesse especifico em aplicativos para celular, tablets e dispositivos pessoais?",
+      "ajuda": "Publicar na loja, notificacoes push, uso de camera e sensores.",
+      "categoria": "Plataforma",
+      "pesos": { "BACKEND": 0.1, "FRONTEND_UX": 0.4, "DATA_SCIENCE": 0.0, "DATA_ENG": 0.0, "CIBERSEGURANCA": 0.1, "DEVOPS_SRE": 0.05, "CLOUD_ARCH": 0.1, "MOBILE": 1.0, "QA": 0.2, "PRODUCT_MGMT": 0.15 }
+    },
+    {
+      "id": "pressao_plantao",
+      "pergunta": "Qual sua disposicao para lidar com incidentes urgentes, pressao e eventual plantao (on-call)?",
+      "ajuda": "O sistema caiu de madrugada, o alarme disparou e e preciso agir rapido.",
+      "categoria": "Infraestrutura",
+      "pesos": { "BACKEND": 0.3, "FRONTEND_UX": -0.1, "DATA_SCIENCE": -0.1, "DATA_ENG": 0.3, "CIBERSEGURANCA": 0.7, "DEVOPS_SRE": 0.9, "CLOUD_ARCH": 0.5, "MOBILE": 0.0, "QA": 0.15, "PRODUCT_MGMT": 0.25 }
+    },
+    {
+      "id": "visao_sistemica",
+      "pergunta": "Quanto voce gosta de pensar no sistema como um todo, desenhando arquitetura e trade-offs?",
+      "ajuda": "Decidir entre custo, desempenho e disponibilidade; desenhar diagramas.",
+      "categoria": "Arquitetura",
+      "pesos": { "BACKEND": 0.6, "FRONTEND_UX": 0.2, "DATA_SCIENCE": 0.2, "DATA_ENG": 0.6, "CIBERSEGURANCA": 0.4, "DEVOPS_SRE": 0.6, "CLOUD_ARCH": 1.0, "MOBILE": 0.2, "QA": 0.25, "PRODUCT_MGMT": 0.45 }
+    },
+    {
+      "id": "big_data_pipelines",
+      "pergunta": "Qual sua afinidade com grandes volumes de dados e construcao de pipelines de processamento?",
+      "ajuda": "ETL/ELT, dados em lote e em streaming, data lake, orquestracao.",
+      "categoria": "Dados",
+      "pesos": { "BACKEND": 0.2, "FRONTEND_UX": -0.05, "DATA_SCIENCE": 0.6, "DATA_ENG": 1.0, "CIBERSEGURANCA": 0.05, "DEVOPS_SRE": 0.3, "CLOUD_ARCH": 0.45, "MOBILE": 0.0, "QA": 0.15, "PRODUCT_MGMT": 0.1 }
+    },
+    {
+      "id": "pesquisa_experimentacao",
+      "pergunta": "Quanto voce gosta de formular hipoteses, experimentar e validar resultados com metodo?",
+      "ajuda": "Testes A/B, leitura de artigos, metodo cientifico, modelos preditivos.",
+      "categoria": "Aptidao analitica",
+      "pesos": { "BACKEND": 0.15, "FRONTEND_UX": 0.2, "DATA_SCIENCE": 0.95, "DATA_ENG": 0.35, "CIBERSEGURANCA": 0.4, "DEVOPS_SRE": 0.2, "CLOUD_ARCH": 0.2, "MOBILE": 0.1, "QA": 0.35, "PRODUCT_MGMT": 0.6 }
+    },
+    {
+      "id": "documentacao_processos",
+      "pergunta": "Qual sua disposicao para documentar, padronizar processos e seguir normas de conformidade?",
+      "ajuda": "Escrever runbooks, politicas, LGPD, ISO, criterios de aceite.",
+      "categoria": "Qualidade",
+      "pesos": { "BACKEND": 0.25, "FRONTEND_UX": 0.2, "DATA_SCIENCE": 0.25, "DATA_ENG": 0.35, "CIBERSEGURANCA": 0.5, "DEVOPS_SRE": 0.4, "CLOUD_ARCH": 0.55, "MOBILE": 0.2, "QA": 0.65, "PRODUCT_MGMT": 0.7 }
+    },
+    {
+      "id": "logica_servidor_apis",
+      "pergunta": "Quanto lhe atrai construir a parte invisivel do sistema: APIs, regras de negocio e integracoes?",
+      "ajuda": "Servicos REST/GraphQL, filas de mensagens, autenticacao, performance de servidor.",
+      "categoria": "Plataforma",
+      "pesos": { "BACKEND": 1.0, "FRONTEND_UX": -0.2, "DATA_SCIENCE": 0.2, "DATA_ENG": 0.55, "CIBERSEGURANCA": 0.3, "DEVOPS_SRE": 0.4, "CLOUD_ARCH": 0.45, "MOBILE": 0.3, "QA": 0.2, "PRODUCT_MGMT": -0.2 }
+    }
+  ],
+
+  "regras_certeza": [
+    {
+      "id": "R01",
+      "descricao": "Pendor quantitativo e experimental caracteriza Ciencia de Dados",
+      "condicoes": [
+        { "dimensao": "matematica_estatistica", "op": ">=", "valor": 4 },
+        { "dimensao": "pesquisa_experimentacao", "op": ">=", "valor": 4 }
+      ],
+      "trilha": "DATA_SCIENCE",
+      "cf": 0.8,
+      "justificativa": "Afinidade alta com matematica/estatistica combinada com gosto por experimentacao e a assinatura classica do cientista de dados."
+    },
+    {
+      "id": "R02",
+      "descricao": "Infraestrutura + automacao + tolerancia a plantao indicam DevOps/SRE",
+      "condicoes": [
+        { "dimensao": "infraestrutura_redes", "op": ">=", "valor": 4 },
+        { "dimensao": "automacao_scripting", "op": ">=", "valor": 4 },
+        { "dimensao": "pressao_plantao", "op": ">=", "valor": 3 }
+      ],
+      "trilha": "DEVOPS_SRE",
+      "cf": 0.85,
+      "justificativa": "Voce une interesse por infraestrutura, inclinacao a automatizar tudo e disposicao para responder a incidentes: o nucleo do papel de SRE."
+    },
+    {
+      "id": "R03",
+      "descricao": "Visao sistemica + infraestrutura + comunicacao indicam Arquitetura de Nuvem",
+      "condicoes": [
+        { "dimensao": "visao_sistemica", "op": ">=", "valor": 4 },
+        { "dimensao": "infraestrutura_redes", "op": ">=", "valor": 3 },
+        { "dimensao": "comunicacao_negocio", "op": ">=", "valor": 3 }
+      ],
+      "trilha": "CLOUD_ARCH",
+      "cf": 0.75,
+      "justificativa": "Arquitetar na nuvem exige pensar o todo, dominar infraestrutura e saber defender decisoes tecnicas diante do negocio."
+    },
+    {
+      "id": "R04",
+      "descricao": "Design visual + experiencia do usuario indicam Front-end/UX",
+      "condicoes": [
+        { "dimensao": "design_visual", "op": ">=", "valor": 4 },
+        { "dimensao": "experiencia_usuario", "op": ">=", "valor": 4 }
+      ],
+      "trilha": "FRONTEND_UX",
+      "cf": 0.85,
+      "justificativa": "Sensibilidade estetica aliada a empatia com o usuario e o que diferencia um bom profissional de Front-end/UX."
+    },
+    {
+      "id": "R05",
+      "descricao": "Logica de servidor + banco de dados + algoritmos indicam Back-end",
+      "condicoes": [
+        { "dimensao": "logica_servidor_apis", "op": ">=", "valor": 4 },
+        { "dimensao": "banco_dados_modelagem", "op": ">=", "valor": 3 },
+        { "dimensao": "logica_algoritmos", "op": ">=", "valor": 3 }
+      ],
+      "trilha": "BACKEND",
+      "cf": 0.82,
+      "justificativa": "Gosto por regras de negocio no servidor, modelagem de dados e algoritmos forma a base do desenvolvimento Back-end."
+    },
+    {
+      "id": "R06",
+      "descricao": "Seguranca + atencao a detalhes indicam Ciberseguranca",
+      "condicoes": [
+        { "dimensao": "seguranca_investigacao", "op": ">=", "valor": 4 },
+        { "dimensao": "atencao_detalhes", "op": ">=", "valor": 3 }
+      ],
+      "trilha": "CIBERSEGURANCA",
+      "cf": 0.83,
+      "justificativa": "Mentalidade investigativa sobre falhas somada a rigor nos detalhes sustenta a atuacao em Seguranca da Informacao."
+    },
+    {
+      "id": "R07",
+      "descricao": "Pipelines + modelagem indicam Engenharia de Dados",
+      "condicoes": [
+        { "dimensao": "big_data_pipelines", "op": ">=", "valor": 4 },
+        { "dimensao": "banco_dados_modelagem", "op": ">=", "valor": 4 }
+      ],
+      "trilha": "DATA_ENG",
+      "cf": 0.84,
+      "justificativa": "Interesse por grandes volumes e por modelagem solida aponta para quem constroi a estrada por onde os dados trafegam."
+    },
+    {
+      "id": "R08",
+      "descricao": "Gestao + comunicacao indicam Product Management",
+      "condicoes": [
+        { "dimensao": "gestao_lideranca", "op": ">=", "valor": 4 },
+        { "dimensao": "comunicacao_negocio", "op": ">=", "valor": 4 }
+      ],
+      "trilha": "PRODUCT_MGMT",
+      "cf": 0.8,
+      "justificativa": "Vocacao para conduzir pessoas e comunicar com clareza e o principal ativo de um Product Manager."
+    },
+    {
+      "id": "R09",
+      "descricao": "Detalhes + automacao indicam QA moderno",
+      "condicoes": [
+        { "dimensao": "atencao_detalhes", "op": ">=", "valor": 4 },
+        { "dimensao": "automacao_scripting", "op": ">=", "valor": 3 }
+      ],
+      "trilha": "QA",
+      "cf": 0.78,
+      "justificativa": "QA hoje e engenharia: rigor para achar o defeito somado a automacao para impedir que ele volte."
+    },
+    {
+      "id": "R10",
+      "descricao": "Mobile + experiencia do usuario indicam desenvolvimento Mobile",
+      "condicoes": [
+        { "dimensao": "dispositivos_moveis", "op": ">=", "valor": 4 },
+        { "dimensao": "experiencia_usuario", "op": ">=", "valor": 3 }
+      ],
+      "trilha": "MOBILE",
+      "cf": 0.82,
+      "justificativa": "Interesse declarado por aplicativos e cuidado com a experiencia em telas pequenas caracterizam a trilha Mobile."
+    },
+    {
+      "id": "R11",
+      "descricao": "Reforco: Back-end se beneficia de visao sistemica",
+      "condicoes": [
+        { "dimensao": "visao_sistemica", "op": ">=", "valor": 4 },
+        { "dimensao": "logica_servidor_apis", "op": ">=", "valor": 4 }
+      ],
+      "trilha": "BACKEND",
+      "cf": 0.45,
+      "justificativa": "Pensar arquitetura de servicos amplia o teto de crescimento dentro do Back-end."
+    },
+    {
+      "id": "R12",
+      "descricao": "Reforco: Ciencia de Dados precisa de comunicacao",
+      "condicoes": [
+        { "dimensao": "matematica_estatistica", "op": ">=", "valor": 4 },
+        { "dimensao": "comunicacao_negocio", "op": ">=", "valor": 4 }
+      ],
+      "trilha": "DATA_SCIENCE",
+      "cf": 0.5,
+      "justificativa": "Analise sem storytelling nao gera decisao: sua comunicacao potencializa o lado quantitativo."
+    },
+    {
+      "id": "R13",
+      "descricao": "Contraindicacao: aversao a detalhes enfraquece QA",
+      "condicoes": [{ "dimensao": "atencao_detalhes", "op": "<=", "valor": 2 }],
+      "trilha": "QA",
+      "cf": -0.7,
+      "justificativa": "Baixa tolerancia a tarefas minuciosas tende a gerar frustracao rapida em QA."
+    },
+    {
+      "id": "R14",
+      "descricao": "Contraindicacao: rejeicao a infraestrutura enfraquece DevOps/SRE",
+      "condicoes": [{ "dimensao": "infraestrutura_redes", "op": "<=", "valor": 2 }],
+      "trilha": "DEVOPS_SRE",
+      "cf": -0.65,
+      "justificativa": "DevOps/SRE vive de infraestrutura; sem esse gosto o dia a dia se torna penoso."
+    },
+    {
+      "id": "R15",
+      "descricao": "Contraindicacao: rejeicao a plantao limita SRE",
+      "condicoes": [{ "dimensao": "pressao_plantao", "op": "<=", "valor": 2 }],
+      "trilha": "DEVOPS_SRE",
+      "cf": -0.45,
+      "justificativa": "Rotinas de on-call sao estruturais em SRE; recusa a elas reduz muito as vagas acessiveis."
+    },
+    {
+      "id": "R16",
+      "descricao": "Contraindicacao: desinteresse visual enfraquece Front-end",
+      "condicoes": [
+        { "dimensao": "design_visual", "op": "<=", "valor": 2 },
+        { "dimensao": "experiencia_usuario", "op": "<=", "valor": 2 }
+      ],
+      "trilha": "FRONTEND_UX",
+      "cf": -0.6,
+      "justificativa": "Front-end sem interesse por estetica e usabilidade costuma resultar em entregas que o usuario rejeita."
+    },
+    {
+      "id": "R17",
+      "descricao": "Contraindicacao: aversao a matematica enfraquece Ciencia de Dados",
+      "condicoes": [{ "dimensao": "matematica_estatistica", "op": "<=", "valor": 2 }],
+      "trilha": "DATA_SCIENCE",
+      "cf": -0.72,
+      "justificativa": "Estatistica e o alicerce da Ciencia de Dados; sem ela o profissional fica restrito a ferramentas de clique."
+    },
+    {
+      "id": "R18",
+      "descricao": "Contraindicacao: baixa comunicacao enfraquece Product Management",
+      "condicoes": [{ "dimensao": "comunicacao_negocio", "op": "<=", "valor": 2 }],
+      "trilha": "PRODUCT_MGMT",
+      "cf": -0.75,
+      "justificativa": "O PM trabalha por influencia, nao por autoridade tecnica: comunicacao e pre-requisito inegociavel."
+    }
+  ],
+
+  "regras_penalidade": [
+    {
+      "id": "P01",
+      "descricao": "Perfil de gestao puro contra trilhas de infraestrutura profunda",
+      "condicoes": [
+        { "dimensao": "gestao_lideranca", "op": ">=", "valor": 4 },
+        { "dimensao": "infraestrutura_redes", "op": "<=", "valor": 2 },
+        { "dimensao": "automacao_scripting", "op": "<=", "valor": 2 }
+      ],
+      "trilhas": ["DEVOPS_SRE", "CLOUD_ARCH"],
+      "penalidade": 0.22,
+      "motivo": "Perfil orientado a pessoas sem base de infraestrutura/automacao: trilhas de operacao exigem maos na ferramenta antes da gestao."
+    },
+    {
+      "id": "P02",
+      "descricao": "Aversao a codigo contra trilhas de engenharia",
+      "condicoes": [
+        { "dimensao": "logica_algoritmos", "op": "<=", "valor": 2 },
+        { "dimensao": "logica_servidor_apis", "op": "<=", "valor": 2 }
+      ],
+      "trilhas": ["BACKEND", "DATA_ENG", "MOBILE"],
+      "penalidade": 0.25,
+      "motivo": "Baixa afinidade com logica e com codigo de servidor conflita com trilhas de engenharia de software intensiva."
+    },
+    {
+      "id": "P03",
+      "descricao": "Desinteresse por dados contra trilhas de dados",
+      "condicoes": [
+        { "dimensao": "banco_dados_modelagem", "op": "<=", "valor": 2 },
+        { "dimensao": "big_data_pipelines", "op": "<=", "valor": 2 }
+      ],
+      "trilhas": ["DATA_ENG", "DATA_SCIENCE"],
+      "penalidade": 0.24,
+      "motivo": "Sem gosto por modelagem e por pipelines, o dia a dia das trilhas de dados se torna repetitivo e desmotivador."
+    },
+    {
+      "id": "P04",
+      "descricao": "Recusa a documentar contra trilhas de conformidade",
+      "condicoes": [{ "dimensao": "documentacao_processos", "op": "<=", "valor": 2 }],
+      "trilhas": ["QA", "CIBERSEGURANCA", "PRODUCT_MGMT"],
+      "penalidade": 0.14,
+      "motivo": "Essas trilhas produzem artefatos escritos constantemente: politicas, criterios de aceite, laudos e roadmaps."
+    },
+    {
+      "id": "P05",
+      "descricao": "Perfil de back-end puro contra Front-end/UX",
+      "condicoes": [
+        { "dimensao": "logica_servidor_apis", "op": ">=", "valor": 4 },
+        { "dimensao": "design_visual", "op": "<=", "valor": 2 }
+      ],
+      "trilhas": ["FRONTEND_UX"],
+      "penalidade": 0.18,
+      "motivo": "Preferencia marcada pelo servidor somada a desinteresse visual indica que Front-end seria escolha por falta de alternativa."
+    },
+    {
+      "id": "P06",
+      "descricao": "Nenhum interesse na plataforma movel",
+      "condicoes": [{ "dimensao": "dispositivos_moveis", "op": "<=", "valor": 2 }],
+      "trilhas": ["MOBILE"],
+      "penalidade": 0.2,
+      "motivo": "A trilha Mobile e definida pela plataforma; sem interesse nela nao ha motivacao sustentavel."
+    },
+    {
+      "id": "P07",
+      "descricao": "Baixa interacao social contra trilhas de alta negociacao",
+      "condicoes": [
+        { "dimensao": "comunicacao_negocio", "op": "<=", "valor": 2 },
+        { "dimensao": "gestao_lideranca", "op": "<=", "valor": 2 }
+      ],
+      "trilhas": ["PRODUCT_MGMT", "CLOUD_ARCH"],
+      "penalidade": 0.2,
+      "motivo": "Ambas as trilhas passam a maior parte do tempo negociando com pessoas e areas diferentes."
+    }
+  ],
+
+  "objetivos_carreira": {
+    "pergunta": "Quais objetivos mais pesam na sua decisao de carreira?",
+    "ajuda": "Os objetivos ajustam o ranking em ate 12%, sem substituir a afinidade de perfil.",
+    "opcoes": [
+      {
+        "id": "salario_rapido",
+        "rotulo": "Chegar rapido a uma boa remuneracao",
+        "bonus": { "DEVOPS_SRE": 0.9, "CLOUD_ARCH": 1.0, "DATA_ENG": 0.9, "CIBERSEGURANCA": 0.85, "BACKEND": 0.6, "DATA_SCIENCE": 0.6, "PRODUCT_MGMT": 0.6, "MOBILE": 0.4, "FRONTEND_UX": 0.3, "QA": 0.25 }
+      },
+      {
+        "id": "primeira_vaga_rapida",
+        "rotulo": "Conseguir a primeira vaga no menor tempo possivel",
+        "bonus": { "QA": 1.0, "FRONTEND_UX": 0.9, "BACKEND": 0.6, "MOBILE": 0.5, "DATA_ENG": 0.3, "DEVOPS_SRE": 0.25, "PRODUCT_MGMT": 0.2, "CIBERSEGURANCA": 0.2, "CLOUD_ARCH": 0.1, "DATA_SCIENCE": 0.15 }
+      },
+      {
+        "id": "remoto_internacional",
+        "rotulo": "Trabalhar remoto para o exterior",
+        "bonus": { "BACKEND": 0.9, "DEVOPS_SRE": 0.9, "CLOUD_ARCH": 0.85, "DATA_ENG": 0.8, "FRONTEND_UX": 0.75, "MOBILE": 0.6, "CIBERSEGURANCA": 0.6, "DATA_SCIENCE": 0.6, "QA": 0.5, "PRODUCT_MGMT": 0.35 }
+      },
+      {
+        "id": "estabilidade",
+        "rotulo": "Estabilidade e previsibilidade (setor publico, grandes empresas)",
+        "bonus": { "CIBERSEGURANCA": 1.0, "QA": 0.8, "DATA_ENG": 0.6, "BACKEND": 0.6, "CLOUD_ARCH": 0.55, "DEVOPS_SRE": 0.45, "DATA_SCIENCE": 0.4, "PRODUCT_MGMT": 0.3, "FRONTEND_UX": 0.35, "MOBILE": 0.3 }
+      },
+      {
+        "id": "lideranca_futura",
+        "rotulo": "Evoluir para lideranca ou gestao de produto",
+        "bonus": { "PRODUCT_MGMT": 1.0, "CLOUD_ARCH": 0.8, "QA": 0.5, "DEVOPS_SRE": 0.45, "BACKEND": 0.45, "DATA_SCIENCE": 0.4, "FRONTEND_UX": 0.4, "DATA_ENG": 0.4, "CIBERSEGURANCA": 0.35, "MOBILE": 0.3 }
+      },
+      {
+        "id": "empreender_produto",
+        "rotulo": "Criar meu proprio produto ou startup",
+        "bonus": { "PRODUCT_MGMT": 0.9, "FRONTEND_UX": 0.85, "BACKEND": 0.85, "MOBILE": 0.8, "DATA_SCIENCE": 0.5, "CLOUD_ARCH": 0.5, "DATA_ENG": 0.4, "DEVOPS_SRE": 0.4, "CIBERSEGURANCA": 0.3, "QA": 0.25 }
+      },
+      {
+        "id": "pesquisa_academica",
+        "rotulo": "Seguir pesquisa, mestrado ou doutorado",
+        "bonus": { "DATA_SCIENCE": 1.0, "CIBERSEGURANCA": 0.7, "DATA_ENG": 0.5, "CLOUD_ARCH": 0.4, "BACKEND": 0.35, "QA": 0.3, "FRONTEND_UX": 0.25, "DEVOPS_SRE": 0.25, "MOBILE": 0.2, "PRODUCT_MGMT": 0.3 }
+      },
+      {
+        "id": "evitar_plantao",
+        "rotulo": "Evitar plantao e trabalho fora do horario comercial",
+        "bonus": { "FRONTEND_UX": 0.8, "QA": 0.8, "PRODUCT_MGMT": 0.7, "MOBILE": 0.7, "DATA_SCIENCE": 0.65, "BACKEND": 0.45, "DATA_ENG": 0.3, "CLOUD_ARCH": 0.25, "CIBERSEGURANCA": 0.1, "DEVOPS_SRE": 0.0 }
+      }
+    ]
+  }
+}
